@@ -9,8 +9,6 @@ public class Application {
         Operations op = new Operations();
         ArrayList<Subject> major = new ArrayList<>(); // 전공과목
         ArrayList<Subject> general = new ArrayList<>(); // 교양과목
-        double gpa = 0;
-        double totalWeightSG = 0;
 
         //데이터 입력부분
         System.out.println("전공 과목명과 이수학점, 평점을 입력해주세요(예시: 프로그래밍언어론-3-A+,소프트웨어공학-3-B+):");
