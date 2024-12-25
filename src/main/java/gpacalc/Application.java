@@ -14,13 +14,15 @@ public class Application {
 
         //데이터 입력부분
         System.out.println("전공 과목명과 이수학점, 평점을 입력해주세요(예시: 프로그래밍언어론-3-A+,소프트웨어공학-3-B+):");
-        String input = Console.readLine();
-        major = op.MakeSubjects(input);
+        String input_m = Console.readLine();
         System.out.println("\n교양 과목명과 이수학점, 평점을 입력해주세요(예시: 선형대수학-3-C0,인간관계와자기성장-3-P):");
-        input = Console.readLine();
-        general = op.MakeSubjects(input);
+        String input_g = Console.readLine();
 
-        //프로그램 출력부분
+        //!!주의!! 여기에서 아래 두 부분을 try-catch 로 묶어버리면 exception 이 발생을 안 해서 테스트 통과를 할 수 없게 된다
+        major = op.MakeSubjects(input_m);
+        general = op.MakeSubjects(input_g);
+
+        //목록 출력부분
         op.printSubjects(major, general);
 
         //취득학점 출력

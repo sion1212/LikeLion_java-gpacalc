@@ -6,12 +6,17 @@ public class Operations {
     public Operations() {
     }
 
-    public ArrayList<Subject> MakeSubjects(String input) { // 입력받은 과목 저장
+    public ArrayList<Subject> MakeSubjects(String input){ // 입력받은 과목 저장
         ArrayList<Subject> result = new ArrayList<>();
         String[] subjects = input.split(",");
         for(int i = 0; i < subjects.length; i++) {
             String[] info = subjects[i].split("-");
-            Subject s = new Subject(info[0], Integer.parseInt(info[1]), info[2]);
+            Subject s = null;
+            try {
+                s = new Subject(info[0], Integer.parseInt(info[1]), info[2]);
+            } catch (NumberFormatException e) {
+                throw e;
+            }
             result.add(s);
         }
         return result;

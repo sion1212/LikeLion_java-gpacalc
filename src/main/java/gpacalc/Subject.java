@@ -14,8 +14,7 @@ public class Subject {
             setCredit(credit);
             setGrade(grade);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            System.exit(0);
+            throw e;
         }
     }
 
@@ -65,7 +64,7 @@ public class Subject {
             setGradeNumber(9); // P/NP인 경우 gradeNumber 에 -1을 넣어준다
             return;
         }
-        throw new IllegalStateException("Grade is not correct");
+        throw new IllegalArgumentException("Grade is not correct");
     }
 
     public double getGradeNumber() {
